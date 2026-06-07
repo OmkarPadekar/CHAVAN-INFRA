@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="w-full lg:grid lg:grid-cols-2 lg:items-end gap-12">
           <div>
             <h1 className="font-bold text-white mb-5" style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
               lineHeight: '1.05',
               letterSpacing: '-0.02em',
             }}>
