@@ -1,4 +1,3 @@
-import AnimatedHeading from '../components/AnimatedHeading'
 import FadeIn from '../components/FadeIn'
 
 export default function Hero() {
@@ -14,17 +13,23 @@ export default function Hero() {
       <div className="w-full px-6 md:px-12 lg:px-16 flex-1 flex flex-col justify-end pb-12 lg:pb-16" style={{position:'relative', zIndex:5}}>
         <div className="w-full lg:grid lg:grid-cols-2 lg:items-end gap-12">
           <div>
-            <AnimatedHeading
-              text={"Shaping tomorrow\nwith vision and action."}
-              className="text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-bold text-white mb-5 leading-tight"
-            />
-            <FadeIn delay={800} duration={1000}>
+            <h1 className="font-bold text-white mb-5" style={{
+              fontSize: 'clamp(3rem, 8vw, 7rem)',
+              lineHeight: '1.05',
+              letterSpacing: '-0.02em',
+            }}>
+              Shaping tomorrow<br/>
+              with vision and action.
+            </h1>
+
+            <FadeIn delay={400} duration={1000}>
               <p className="text-base md:text-lg text-gray-200 mb-6 max-w-xl font-medium leading-relaxed">
                 We back visionaries and craft civil, environmental, and safety infrastructures
                 that define what comes next.
               </p>
             </FadeIn>
-            <FadeIn delay={1200} duration={1000}>
+
+            <FadeIn delay={700} duration={1000}>
               <div className="flex flex-wrap gap-4">
                 <a href="#chat" className="bg-white hover:bg-gray-100 text-black px-8 py-3 rounded-xl font-bold text-base transition-colors duration-200">
                   Start a Chat
@@ -38,8 +43,9 @@ export default function Hero() {
               </div>
             </FadeIn>
           </div>
+
           <div className="mt-8 lg:mt-0 flex items-end justify-start lg:justify-end">
-            <FadeIn delay={1400} duration={1000} className="w-full sm:w-auto">
+            <FadeIn delay={1000} duration={1000} className="w-full sm:w-auto">
               <div className="liquid-glass border border-red-500/20 px-6 py-4 rounded-xl">
                 <span className="text-xl md:text-2xl font-semibold text-white block">
                   Infrastructure. Safety. Renewable Grids.
