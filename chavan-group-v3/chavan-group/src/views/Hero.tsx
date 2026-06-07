@@ -16,7 +16,7 @@ export default function Hero() {
           <div>
             <AnimatedHeading
               text={"Shaping tomorrow\nwith vision and action."}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-5 leading-tight"
+              className="text-5xl md:text-6xl lg:text-[5rem] font-bold text-white mb-5 leading-tight"
             />
             <FadeIn delay={800} duration={1000}>
               <p className="text-base md:text-lg text-gray-200 mb-6 max-w-xl font-medium leading-relaxed">
