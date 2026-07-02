@@ -35,7 +35,7 @@ export default function SolarView({ onBack }: Props) {
             <button onClick={onBack} className="flex items-center gap-2.5 text-gray-300 hover:text-white transition-colors font-semibold text-sm uppercase tracking-wide">
               <ArrowLeft className="w-4 h-4" /> Back to Core Hub
             </button>
-            <ChavanLogo onClick={onBack} />
+            <ChavanLogo onClick={onBack} variant="light" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">

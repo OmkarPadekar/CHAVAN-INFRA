@@ -41,7 +41,7 @@ export default function SafetyView({ onBack }: Props) {
           <button onClick={onBack} className="flex items-center gap-2.5 text-gray-400 hover:text-white transition-colors font-mono text-xs uppercase">
             <ArrowLeft className="w-4 h-4" /> Back to Core Hub
           </button>
-          <ChavanLogo onClick={onBack} />
+          <ChavanLogo onClick={onBack} variant="light" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">

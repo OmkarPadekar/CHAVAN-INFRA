@@ -19,7 +19,7 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
           <div>
-            <ChavanLogo onClick={() => onNavigate('home')} className="mb-6" />
+            <ChavanLogo onClick={() => onNavigate('home')} className="mb-6" variant="light" />
             <p className="text-gray-400 max-w-md font-light leading-relaxed text-sm">
               Empowering real-world technological architectures. Built on the bedrock of proven
               structural engineering — clean grids, clean water, compliant safety standards.
