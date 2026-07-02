@@ -36,7 +36,7 @@ export default function Hero() {
                 </a>
                 <button
                   onClick={() => document.getElementById('sectors')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-xl font-bold text-base transition-all duration-300 hover:bg-white hover:text-black"
+                  className="liquid-glass-dark border border-white/20 text-white px-8 py-3 rounded-xl font-bold text-base transition-all duration-300 hover:bg-white hover:text-black"
                 >
                   Explore Divisions
                 </button>
@@ -46,7 +46,7 @@ export default function Hero() {
 
           <div className="mt-8 lg:mt-0 flex items-end justify-start lg:justify-end">
             <FadeIn delay={1000} duration={1000} className="w-full sm:w-auto">
-              <div className="liquid-glass border border-red-500/20 px-6 py-4 rounded-xl">
+              <div className="liquid-glass-dark border border-red-500/20 px-6 py-4 rounded-xl">
                 <span className="text-xl md:text-2xl font-semibold text-white block">
                   Infrastructure. Safety. Renewable Grids.
                 </span>

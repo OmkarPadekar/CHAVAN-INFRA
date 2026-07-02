@@ -11,13 +11,12 @@ export default function ChavanLogo({ onClick, className = '' }: LogoProps) {
       style={{ background: 'transparent' }}
     >
       <img
-        src="/logo.png"
+        src="/logo-transparent.png"
         alt="Chavan Group of Companies"
-        className="h-14 md:h-16 w-auto object-contain"
+        className="h-12 md:h-14 w-auto object-contain"
         style={{
           background: 'transparent',
           mixBlendMode: 'normal',
-          filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.3))',
         }}
       />
     </div>

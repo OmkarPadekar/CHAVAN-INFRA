@@ -6,15 +6,19 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  background: linear-gradient(135deg, #0a0101 0%, #150202 50%, #000000 100%);
-  color: #ffffff;
+  background: #ffffff;
+  color: #1a1414;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Archivo', sans-serif;
 }
 
 /* Make ALL body text heavier by default — easier to read */
@@ -28,18 +32,50 @@ p, li, span, a, label, td, th {
 .section-desc-readable {
   font-size: 1.0625rem;
   font-weight: 500;
-  color: #d1d5db;
+  color: #3a2f2f;
   line-height: 1.75;
 }
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #090202; }
-::-webkit-scrollbar-thumb { background: rgba(239, 68, 68, 0.35); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(239, 68, 68, 0.6); }
+::-webkit-scrollbar-track { background: #f5eded; }
+::-webkit-scrollbar-thumb { background: rgba(200, 30, 30, 0.35); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(200, 30, 30, 0.6); }
 
-/* ─── Liquid Glass ─── */
+/* ─── Liquid Glass — light variant ─── */
 .liquid-glass {
+  background: rgba(255, 255, 255, 0.72);
+  background-blend-mode: normal;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: none;
+  box-shadow: 0 4px 24px rgba(60, 20, 20, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(200, 30, 30, 0.35) 0%,
+    rgba(200, 30, 30, 0.08) 20%,
+    rgba(200, 30, 30, 0) 40%,
+    rgba(200, 30, 30, 0) 60%,
+    rgba(200, 30, 30, 0.08) 80%,
+    rgba(200, 30, 30, 0.35) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ─── Dark surfaces (footer, sector-page overlays) keep the liquid-glass look but dark ─── */
+.liquid-glass-dark {
   background: rgba(15, 3, 3, 0.45);
   background-blend-mode: luminosity;
   backdrop-filter: blur(16px);
@@ -50,7 +86,7 @@ p, li, span, a, label, td, th {
   overflow: hidden;
 }
 
-.liquid-glass::before {
+.liquid-glass-dark::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -68,6 +104,19 @@ p, li, span, a, label, td, th {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+/* ─── Floating navbar — hides on scroll down, reveals on scroll up ─── */
+.navbar-float {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: transform 320ms ease;
+}
+.navbar-float.navbar-hidden {
+  transform: translateY(-130%);
 }
 
 /* ─── Hero Video ─── */

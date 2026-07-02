@@ -27,7 +27,7 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto text-center">
 
         <header ref={r1} className="mb-10 reveal-up">
-          <span className="text-xs font-bold uppercase tracking-widest text-red-500 block mb-3">
+          <span className="text-xs font-bold uppercase tracking-widest text-crimson-500 block mb-3">
             Get Free Consultation
           </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-white">
@@ -41,9 +41,9 @@ export default function Contact() {
 
         <div
           ref={r2 as React.RefObject<HTMLDivElement>}
-          className="liquid-glass border border-white/20 p-6 md:p-8 rounded-2xl max-w-xl mx-auto text-left reveal-up"
+          className="liquid-glass-dark border border-white/20 p-6 md:p-8 rounded-2xl max-w-xl mx-auto text-left reveal-up"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-red-500 block mb-5">
+          <span className="text-xs font-bold uppercase tracking-widest text-crimson-500 block mb-5">
             Contact Details
           </span>
 
@@ -85,7 +85,7 @@ export default function Contact() {
               </span>
               <a
                 href="mailto:chavangreenenergies001@gmail.com"
-                className="text-white font-medium hover:text-red-400 transition-colors text-base break-all"
+                className="text-white font-medium hover:text-crimson-400 transition-colors text-base break-all"
               >
                 chavangreenenergies001@gmail.com
               </a>

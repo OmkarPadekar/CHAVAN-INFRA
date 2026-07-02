@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { X, Menu } from 'lucide-react'
 import ChavanLogo from './ChavanLogo'
 
@@ -18,6 +18,26 @@ const NAV_LINKS = [
 
 export default function Navbar({ onNavigate }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [hidden, setHidden] = useState(false)
+  const lastY = useRef(0)
+
+  useEffect(() => {
+    lastY.current = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      const goingDown = y > lastY.current
+      const pastThreshold = y > 96
+
+      if (goingDown && pastThreshold) {
+        setHidden(true)
+      } else {
+        setHidden(false)
+      }
+      lastY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleAnchorClick = (href: string) => {
     onNavigate('home')
@@ -30,7 +50,7 @@ export default function Navbar({ onNavigate }: NavbarProps) {
 
   return (
     <>
-      <header className="w-full px-4 md:px-10 lg:px-14 pt-5 z-20 relative">
+      <header className={`navbar-float ${hidden ? 'navbar-hidden' : ''} w-full px-4 md:px-10 lg:px-14 pt-5`}>
         <nav className="liquid-glass rounded-2xl px-6 py-4 flex items-center justify-between">
 
           {/* Logo — bigger */}
@@ -42,8 +62,7 @@ export default function Navbar({ onNavigate }: NavbarProps) {
               <button
                 key={link.href}
                 onClick={() => handleAnchorClick(link.href)}
-                className="text-base font-semibold text-white hover:text-red-400 transition-colors duration-200 tracking-wide"
-                style={{ fontFamily: "'Inter', sans-serif" }}
+                className="text-base font-semibold text-ink-900 hover:text-crimson-500 transition-colors duration-200 tracking-wide"
               >
                 {link.label}
               </button>
@@ -53,15 +72,14 @@ export default function Navbar({ onNavigate }: NavbarProps) {
           {/* CTA */}
           <button
             onClick={() => handleAnchorClick('#chat')}
-            className="hidden md:block bg-red-600 hover:bg-red-700 text-white px-7 py-3 rounded-xl text-base font-bold transition-colors duration-200 tracking-wide"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="hidden md:block bg-crimson-500 hover:bg-crimson-600 text-white px-7 py-3 rounded-xl text-base font-bold transition-colors duration-200 tracking-wide"
           >
             Get Consultation
           </button>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-ink-900"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -72,9 +90,9 @@ export default function Navbar({ onNavigate }: NavbarProps) {
 
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-black/96 backdrop-blur-xl flex flex-col items-center justify-center gap-10">
+        <div className="fixed inset-0 z-50 bg-white/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10">
           <button
-            className="absolute top-6 right-6 text-white p-2"
+            className="absolute top-6 right-6 text-ink-900 p-2"
             onClick={() => setMobileOpen(false)}
             aria-label="Close menu"
           >
@@ -85,15 +103,14 @@ export default function Navbar({ onNavigate }: NavbarProps) {
             <button
               key={link.href}
               onClick={() => handleAnchorClick(link.href)}
-              className="text-4xl font-bold text-white hover:text-red-500 transition-colors tracking-wide"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="text-4xl font-bold text-ink-900 hover:text-crimson-500 transition-colors tracking-wide"
             >
               {link.label}
             </button>
           ))}
           <button
             onClick={() => handleAnchorClick('#chat')}
-            className="mt-4 bg-red-600 text-white px-10 py-4 rounded-xl font-bold text-lg"
+            className="mt-4 bg-crimson-500 text-white px-10 py-4 rounded-xl font-bold text-lg"
           >
             Get Consultation
           </button>

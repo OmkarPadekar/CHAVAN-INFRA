@@ -38,23 +38,13 @@ export default function App() {
   }
 
   return (
-    <div className="w-full relative min-h-screen">
-      {/* Fixed background */}
-      <div
-        className="fixed top-0 left-0 w-full h-full -z-20 bg-cover bg-center scale-105"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=85&w=1920')`,
-        }}
-      />
-      <div className="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-[#0c0202]/95 via-[#0e0303]/90 to-black/95 -z-10" />
+    <div className="w-full relative min-h-screen bg-white">
+      {/* Navbar floats over everything, fixed to viewport, hides on scroll-down */}
+      <Navbar currentView={view} onNavigate={navigate} />
 
-      {/* HOME view */}
+      {/* HOME view — navbar overlays the full-bleed hero, no spacer needed */}
       {view === 'home' && (
         <>
-          {/* Navbar floats over hero */}
-          <div className="absolute top-0 left-0 right-0 z-30">
-            <Navbar currentView={view} onNavigate={navigate} />
-          </div>
           <Hero />
           <About />
           <Sectors onNavigate={navigate} />
@@ -65,15 +55,14 @@ export default function App() {
         </>
       )}
 
-      {/* DETAIL views — navbar sticks to top */}
+      {/* DETAIL views — content starts below the fixed navbar */}
       {view !== 'home' && (
         <>
-          <div className="sticky top-0 z-30">
-            <Navbar currentView={view} onNavigate={navigate} />
+          <div style={{ paddingTop: '96px' }}>
+            {view === 'water' && <WaterView onBack={goHome} />}
+            {view === 'solar' && <SolarView onBack={goHome} />}
+            {view === 'safety' && <SafetyView onBack={goHome} />}
           </div>
-          {view === 'water' && <WaterView onBack={goHome} />}
-          {view === 'solar' && <SolarView onBack={goHome} />}
-          {view === 'safety' && <SafetyView onBack={goHome} />}
           <Footer onNavigate={navigate} />
         </>
       )}

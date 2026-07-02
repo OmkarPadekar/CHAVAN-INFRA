@@ -26,8 +26,8 @@ export default function Footer({ onNavigate }: FooterProps) {
             </p>
           </div>
 
-          <div className="liquid-glass border border-white/20 p-6 rounded-xl md:ml-auto w-full max-w-sm">
-            <span className="text-xs font-mono uppercase tracking-widest text-red-500 block mb-3">
+          <div className="liquid-glass-dark border border-white/20 p-6 rounded-xl md:ml-auto w-full max-w-sm">
+            <span className="text-xs font-mono uppercase tracking-widest text-crimson-500 block mb-3">
               Quick Navigation
             </span>
             <div className="grid grid-cols-2 gap-y-3 gap-x-6">

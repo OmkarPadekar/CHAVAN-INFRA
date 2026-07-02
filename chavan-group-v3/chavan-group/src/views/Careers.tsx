@@ -38,21 +38,21 @@ export default function Careers() {
   const gridRef = useReveal()
 
   return (
-    <section id="careers" className="w-full py-20 px-6 md:px-12 lg:px-16 border-t border-white/5 bg-black/95">
+    <section id="careers" className="w-full py-20 px-6 md:px-12 lg:px-16 border-t border-crimson-100 bg-[#fdf8f8]">
       <div className="max-w-7xl mx-auto">
 
         <header ref={headerRef} className="mb-12 text-center max-w-2xl mx-auto reveal-up">
-          <span className="text-xs font-bold uppercase tracking-widest text-red-500 block mb-3">
+          <span className="text-xs font-bold uppercase tracking-widest text-crimson-500 block mb-3">
             04 // Engineering Careers
           </span>
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-white">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-ink-900">
             Join us to build a better tomorrow
           </h2>
-          <p className="text-gray-400 font-light mt-3 text-sm">
+          <p className="text-ink-500 font-normal mt-3 text-base">
             We are actively hiring fresh graduates and experienced professionals at our Thane HQ
             and multiple on-site locations.
           </p>
-          <div className="h-[2px] w-12 bg-red-600 mx-auto mt-4" />
+          <div className="h-[2px] w-12 bg-crimson-500 mx-auto mt-4" />
         </header>
 
         <div
@@ -62,16 +62,16 @@ export default function Careers() {
           {JOBS.map(job => (
             <div
               key={job.title}
-              className="bg-white/[0.02] border border-white/10 p-6 rounded-2xl flex flex-col justify-between card-lift"
+              className="bg-white border border-crimson-100 p-6 rounded-2xl flex flex-col justify-between card-lift"
             >
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">{job.title}</h3>
-                <p className="text-xs text-red-500 font-mono mb-4">{job.location}</p>
-                <p className="text-xs text-gray-300 font-light mb-6 leading-relaxed">{job.desc}</p>
+                <h3 className="text-lg font-semibold text-ink-900 mb-2">{job.title}</h3>
+                <p className="text-sm text-crimson-600 font-semibold mb-4">{job.location}</p>
+                <p className="text-sm text-ink-700 font-normal mb-6 leading-relaxed">{job.desc}</p>
               </div>
               <a
                 href="mailto:chavangreenenergies001@gmail.com"
-                className="text-xs text-white border border-white/20 hover:border-white hover:bg-white hover:text-black p-2.5 rounded-lg text-center transition-all block"
+                className="text-sm text-crimson-600 border border-crimson-200 hover:border-crimson-500 hover:bg-crimson-500 hover:text-white p-2.5 rounded-lg text-center transition-all block font-semibold"
               >
                 Apply Now
               </a>

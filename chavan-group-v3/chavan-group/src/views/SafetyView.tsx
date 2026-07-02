@@ -68,7 +68,7 @@ export default function SafetyView({ onBack }: Props) {
           </div>
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
             {STATS.map(s => (
-              <div key={s.label} className="liquid-glass border border-white/10 p-5 rounded-2xl">
+              <div key={s.label} className="liquid-glass-dark border border-white/10 p-5 rounded-2xl">
                 <span className="text-2xl font-light text-white tracking-tight block">{s.value}</span>
                 <span className="text-[10px] text-gray-400 uppercase font-mono tracking-wider mt-2 block">{s.label}</span>
               </div>
@@ -78,7 +78,7 @@ export default function SafetyView({ onBack }: Props) {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Parking */}
-          <div className="liquid-glass border border-white/10 p-8 rounded-2xl">
+          <div className="liquid-glass-dark border border-white/10 p-8 rounded-2xl">
             <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2 font-mono uppercase tracking-wider">
               <Sliders className="w-5 h-5 text-red-500" /> Automated Parking Solutions
             </h3>
@@ -96,7 +96,7 @@ export default function SafetyView({ onBack }: Props) {
           </div>
 
           {/* Fire */}
-          <div className="liquid-glass border border-white/10 p-8 rounded-2xl flex flex-col justify-between">
+          <div className="liquid-glass-dark border border-white/10 p-8 rounded-2xl flex flex-col justify-between">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2 font-mono uppercase tracking-wider">
                 <Layers className="w-5 h-5 text-red-500" /> Complete Fire Safety Systems
@@ -125,7 +125,7 @@ export default function SafetyView({ onBack }: Props) {
           </div>
         </div>
 
-        <div className="liquid-glass border border-white/10 p-8 rounded-2xl text-center max-w-2xl mx-auto">
+        <div className="liquid-glass-dark border border-white/10 p-8 rounded-2xl text-center max-w-2xl mx-auto">
           <h3 className="text-xl font-light text-white mb-3">
             Need Multi-Level Parking Layout or Fire AMC?
           </h3>

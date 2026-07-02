@@ -62,7 +62,7 @@ export default function SolarView({ onBack }: Props) {
             </div>
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               {STATS.map(s => (
-                <div key={s.label} className="liquid-glass border border-yellow-500/20 p-5 rounded-2xl">
+                <div key={s.label} className="liquid-glass-dark border border-yellow-500/20 p-5 rounded-2xl">
                   <span className="text-2xl font-bold text-white tracking-tight block">{s.value}</span>
                   <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider mt-2 block">{s.label}</span>
                 </div>
@@ -75,7 +75,7 @@ export default function SolarView({ onBack }: Props) {
             <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2 uppercase tracking-wider">
               <Sparkles className="w-5 h-5 text-yellow-400" /> Institutional Installations (NMMC School Net Meters)
             </h3>
-            <div className="overflow-x-auto rounded-xl border border-yellow-500/20 liquid-glass">
+            <div className="overflow-x-auto rounded-xl border border-yellow-500/20 liquid-glass-dark">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/[0.02] text-xs font-bold text-gray-300 uppercase tracking-wide">
@@ -99,7 +99,7 @@ export default function SolarView({ onBack }: Props) {
 
           {/* How it works + clients */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <div className="liquid-glass border border-yellow-500/15 p-8 rounded-2xl">
+            <div className="liquid-glass-dark border border-yellow-500/15 p-8 rounded-2xl">
               <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2 uppercase tracking-wider">
                 <Sliders className="w-5 h-5 text-yellow-400" /> The Net Metering Workflow
               </h3>
@@ -119,7 +119,7 @@ export default function SolarView({ onBack }: Props) {
               </div>
             </div>
 
-            <div className="liquid-glass border border-yellow-500/15 p-8 rounded-2xl flex flex-col justify-between">
+            <div className="liquid-glass-dark border border-yellow-500/15 p-8 rounded-2xl flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-wider">
                   <Layers className="w-5 h-5 text-yellow-400" /> Landmark Commissioned Assets
@@ -147,7 +147,7 @@ export default function SolarView({ onBack }: Props) {
           </div>
 
           {/* CTA */}
-          <div className="liquid-glass border border-yellow-500/20 p-8 rounded-2xl text-center max-w-2xl mx-auto">
+          <div className="liquid-glass-dark border border-yellow-500/20 p-8 rounded-2xl text-center max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-3">Require a Free Energy Audit & Feasibility Mapping?</h3>
             <p className="text-base text-gray-300 font-medium mb-6">
               We check structural weight limits, calculate shadow-free acreage, and structure financial amortization schedules.

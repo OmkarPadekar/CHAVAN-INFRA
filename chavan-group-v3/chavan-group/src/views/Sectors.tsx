@@ -69,17 +69,17 @@ export default function Sectors({ onNavigate }: SectorsProps) {
   const gridRef = useReveal()
 
   return (
-    <section id="sectors" className="w-full py-24 lg:py-32 px-6 md:px-12 lg:px-16 border-t border-white/5 bg-black/95">
+    <section id="sectors" className="w-full py-24 lg:py-32 px-6 md:px-12 lg:px-16 border-t border-crimson-100 bg-[#fdf8f8]">
       <div className="max-w-7xl mx-auto">
 
         <header ref={headerRef} className="mb-16 max-w-3xl reveal-up">
-          <span className="text-xs font-bold uppercase tracking-widest text-red-500 block mb-3">
+          <span className="text-xs font-bold uppercase tracking-widest text-crimson-500 block mb-3">
             02 // Industrial Sector Portfolio
           </span>
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight mb-6 text-white">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-6 text-ink-900">
             Click on any division to view the complete technical specifications.
           </h2>
-          <div className="h-[2px] w-12 bg-red-600" />
+          <div className="h-[2px] w-12 bg-crimson-500" />
         </header>
 
         <div
@@ -90,29 +90,29 @@ export default function Sectors({ onNavigate }: SectorsProps) {
             <div
               key={view}
               onClick={() => { onNavigate(view); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-              className="liquid-glass border border-white/5 rounded-2xl p-8 flex flex-col justify-between group cursor-pointer card-lift"
+              className="liquid-glass border border-crimson-100 rounded-2xl p-8 flex flex-col justify-between group cursor-pointer card-lift"
             >
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <span className="text-xs font-semibold tracking-wider uppercase text-red-500 bg-red-950/20 px-3 py-1 rounded-full border border-red-900/30">
+                  <span className="text-xs font-semibold tracking-wider uppercase text-crimson-600 bg-crimson-50 px-3 py-1 rounded-full border border-crimson-100">
                     {tag}
                   </span>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
-                    <Icon className="w-5 h-5 text-red-500" />
+                  <div className="w-10 h-10 rounded-xl bg-crimson-50 flex items-center justify-center border border-crimson-100">
+                    <Icon className="w-5 h-5 text-crimson-500" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-semibold text-white mb-3">{title}</h3>
-                <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">{desc}</p>
+                <h3 className="text-2xl font-semibold text-ink-900 mb-3">{title}</h3>
+                <p className="text-sm text-ink-500 font-normal leading-relaxed mb-6">{desc}</p>
                 <ul className="space-y-2 mb-8">
                   {points.map(p => (
-                    <li key={p} className="text-xs text-gray-300 flex items-center gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-red-500 shrink-0" />
+                    <li key={p} className="text-sm text-ink-700 flex items-center gap-2">
+                      <CheckCircle className="w-3.5 h-3.5 text-crimson-500 shrink-0" />
                       {p}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="flex items-center justify-between text-sm border-t border-white/10 pt-4 text-red-500 font-semibold">
+              <div className="flex items-center justify-between text-sm border-t border-crimson-100 pt-4 text-crimson-600 font-semibold">
                 <span>{cta}</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </div>
