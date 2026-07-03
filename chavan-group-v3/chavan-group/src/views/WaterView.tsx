@@ -20,54 +20,53 @@ const PROCESSES = [
 export default function WaterView({ onBack }: Props) {
   return (
     <div className="min-h-screen relative">
-      {/* Looped background video — water/green energy theme */}
-      <video
-        className="fixed inset-0 w-full h-full object-cover -z-20"
-        src="https://videos.pexels.com/video-files/3931397/3931397-uhd_2560_1440_25fps.mp4"
-        autoPlay loop muted playsInline
+      {/* Looped GIF background — green energy theme */}
+      <div
+        className="fixed inset-0 -z-20 bg-cover bg-center"
+        style={{ backgroundImage: "url('/media/greens-bg.gif')" }}
       />
-      {/* Dark overlay so text stays readable */}
-      <div className="fixed inset-0 bg-gradient-to-br from-[#001a0e]/92 via-[#002210]/88 to-black/94 -z-10" />
+      {/* Light overlay so text stays readable against the bright background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-white/94 via-white/90 to-white/94 -z-10" />
 
       <div className="py-12 px-6 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto">
 
           {/* Header bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-8 border-b border-green-500/20 mb-12">
-            <button onClick={onBack} className="flex items-center gap-2.5 text-gray-300 hover:text-white transition-colors font-semibold text-sm uppercase tracking-wide">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-8 border-b border-green-200 mb-12">
+            <button onClick={onBack} className="flex items-center gap-2.5 text-ink-500 hover:text-ink-900 transition-colors font-semibold text-sm uppercase tracking-wide">
               <ArrowLeft className="w-4 h-4" /> Back to Core Hub
             </button>
-            <ChavanLogo onClick={onBack} variant="light" />
+            <ChavanLogo onClick={onBack} variant="dark" />
           </div>
 
           {/* Intro grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-7">
-              <span className="text-xs font-bold uppercase tracking-widest text-green-400 block mb-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-green-600 block mb-3">
                 01 // Chavan Green Energies Division
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-ink-900 mb-6 leading-tight">
                 Excellence in Waste Water<br/>Treatment Solutions
               </h1>
-              <p className="text-gray-200 font-medium text-base md:text-lg leading-relaxed mb-6">
+              <p className="text-ink-700 font-medium text-base md:text-lg leading-relaxed mb-6">
                 We manufacture decentralised and modular water treatment systems utilising a patented,
                 physio-electrical micro-electrolysis reactor. Our technology eliminates primary chemical
                 mixing steps entirely, offering up to 99% water recovery for immediate reuse.
               </p>
               <div className="flex flex-wrap gap-4">
-                <div className="bg-green-950/40 border border-green-800/40 px-4 py-2 rounded-xl text-sm font-semibold text-green-400 flex items-center gap-2">
+                <div className="bg-green-50 border border-green-200 px-4 py-2 rounded-xl text-sm font-semibold text-green-700 flex items-center gap-2">
                   <Activity className="w-4 h-4" /> Manufacturing: Thane near Mumbai
                 </div>
-                <div className="bg-green-950/40 border border-green-800/40 px-4 py-2 rounded-xl text-sm font-semibold text-green-400 flex items-center gap-2">
+                <div className="bg-green-50 border border-green-200 px-4 py-2 rounded-xl text-sm font-semibold text-green-700 flex items-center gap-2">
                   <CheckCircle className="w-4 h-4" /> Meets CPCB Norms
                 </div>
               </div>
             </div>
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               {STATS.map(s => (
-                <div key={s.label} className="liquid-glass-dark border border-green-500/20 p-5 rounded-2xl">
-                  <span className="text-2xl font-bold text-white tracking-tight block">{s.value}</span>
-                  <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider mt-2 block">{s.label}</span>
+                <div key={s.label} className="bg-white/90 backdrop-blur border border-green-200 shadow-[0_8px_32px_rgba(20,80,20,0.06)] p-5 rounded-2xl">
+                  <span className="text-2xl font-bold text-ink-900 tracking-tight block">{s.value}</span>
+                  <span className="text-xs text-ink-500 uppercase font-semibold tracking-wider mt-2 block">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -75,11 +74,11 @@ export default function WaterView({ onBack }: Props) {
 
           {/* Tech detail */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <div className="liquid-glass-dark border border-green-500/15 p-8 rounded-2xl">
-              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2 uppercase tracking-wider">
-                <Sliders className="w-5 h-5 text-green-400" /> Reactor Mechanics: Six-In-One Steps
+            <div className="bg-white/90 backdrop-blur border border-green-200 shadow-[0_8px_32px_rgba(20,80,20,0.06)] p-8 rounded-2xl">
+              <h3 className="text-lg font-bold text-ink-900 mb-6 flex items-center gap-2 uppercase tracking-wider">
+                <Sliders className="w-5 h-5 text-green-600" /> Reactor Mechanics: Six-In-One Steps
               </h3>
-              <p className="text-base text-gray-200 font-medium leading-relaxed mb-6">
+              <p className="text-base text-ink-700 font-medium leading-relaxed mb-6">
                 Conventional biological and physical treatments rely heavily on chemical mixers, settling
                 tanks, and manual dosage. Chavan's advanced reactor executes six chemical and physical
                 processes in a single step under 60 seconds:
@@ -87,17 +86,17 @@ export default function WaterView({ onBack }: Props) {
               <div className="space-y-4">
                 {PROCESSES.map(p => (
                   <div key={p.name} className="border-l-2 border-green-500 pl-4 py-1">
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider">{p.name}</h4>
-                    <p className="text-sm text-gray-300 font-medium mt-0.5">{p.desc}</p>
+                    <h4 className="text-sm font-bold text-ink-900 uppercase tracking-wider">{p.name}</h4>
+                    <p className="text-sm text-ink-500 font-medium mt-0.5">{p.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="liquid-glass-dark border border-green-500/15 p-8 rounded-2xl flex flex-col justify-between">
+            <div className="bg-white/90 backdrop-blur border border-green-200 shadow-[0_8px_32px_rgba(20,80,20,0.06)] p-8 rounded-2xl flex flex-col justify-between">
               <div>
-                <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2 uppercase tracking-wider">
-                  <Layers className="w-5 h-5 text-green-400" /> Technical Specifications
+                <h3 className="text-lg font-bold text-ink-900 mb-6 flex items-center gap-2 uppercase tracking-wider">
+                  <Layers className="w-5 h-5 text-green-600" /> Technical Specifications
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                   {[
@@ -106,18 +105,18 @@ export default function WaterView({ onBack }: Props) {
                     { label: 'REACTOR LIFESPAN', val: '10+ Years Heavy Usage' },
                     { label: 'DIGITAL INTEGRATION', val: 'Smart Platform Enabled' },
                   ].map(spec => (
-                    <div key={spec.label} className="p-3 bg-white/[0.04] border border-white/8 rounded-lg">
-                      <span className="text-gray-400 block mb-1 text-xs font-semibold uppercase tracking-wide">{spec.label}</span>
-                      <span className="text-white font-bold text-sm">{spec.val}</span>
+                    <div key={spec.label} className="p-3 bg-green-50/60 border border-green-100 rounded-lg">
+                      <span className="text-ink-500 block mb-1 text-xs font-semibold uppercase tracking-wide">{spec.label}</span>
+                      <span className="text-ink-900 font-bold text-sm">{spec.val}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-green-950/40 border border-green-900/40 p-5 rounded-xl">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-green-400 mb-2">Source Documents:</h4>
+              <div className="bg-green-50 border border-green-200 p-5 rounded-xl">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-green-700 mb-2">Source Documents:</h4>
                 {['Chavan Group STP Brochure.pdf', 'Sewage Treatment Plant Brochure.pdf'].map(d => (
-                  <span key={d} className="text-sm font-medium text-white flex items-center gap-1 mt-1">
-                    <FileText className="w-3 h-3 text-green-400 shrink-0" /> {d}
+                  <span key={d} className="text-sm font-medium text-ink-900 flex items-center gap-1 mt-1">
+                    <FileText className="w-3 h-3 text-green-600 shrink-0" /> {d}
                   </span>
                 ))}
               </div>
@@ -125,9 +124,9 @@ export default function WaterView({ onBack }: Props) {
           </div>
 
           {/* CTA */}
-          <div className="liquid-glass-dark border border-green-500/20 p-8 rounded-2xl text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-3">Require a Custom Water Auditing & Sizing Proposal?</h3>
-            <p className="text-base text-gray-300 font-medium mb-6">
+          <div className="bg-white/90 backdrop-blur border border-green-200 shadow-[0_8px_32px_rgba(20,80,20,0.06)] p-8 rounded-2xl text-center max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-ink-900 mb-3">Require a Custom Water Auditing & Sizing Proposal?</h3>
+            <p className="text-base text-ink-500 font-medium mb-6">
               Connect with our Thane headquarters. We provide full chemical feasibility testing on-site
               for industrial or residential domestic waste streams.
             </p>
@@ -139,7 +138,7 @@ export default function WaterView({ onBack }: Props) {
                 </svg>
                 Chat on WhatsApp
               </a>
-              <button onClick={onBack} className="border border-white/20 px-6 py-3 rounded-xl text-base font-bold hover:bg-white hover:text-black transition-all">
+              <button onClick={onBack} className="border border-ink-900/15 text-ink-900 px-6 py-3 rounded-xl text-base font-bold hover:bg-ink-900 hover:text-white transition-all">
                 Back to Core Hub
               </button>
             </div>
