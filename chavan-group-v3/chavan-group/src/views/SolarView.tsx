@@ -1,5 +1,6 @@
 import { ArrowLeft, CheckCircle, FileText, Sliders, Layers, Activity, Sparkles } from 'lucide-react'
 import ChavanLogo from '../components/ChavanLogo'
+import GreenEnergyBackground from '../components/GreenEnergyBackground'
 
 interface Props { onBack: () => void }
 
@@ -19,7 +20,11 @@ const NMMC = [
 
 export default function SolarView({ onBack }: Props) {
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-amber-50/60 via-white to-amber-50/40">
+    <div className="min-h-screen relative">
+      {/* Looped, code-drawn solar + windmill scene */}
+      <GreenEnergyBackground />
+      {/* Amber-tinted overlay so text stays readable and page keeps its solar identity */}
+      <div className="fixed inset-0 bg-gradient-to-br from-amber-50/85 via-white/80 to-amber-50/80 -z-10" />
       <div className="py-12 px-6 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto">
 
