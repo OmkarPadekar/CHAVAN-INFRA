@@ -1,5 +1,6 @@
 import { ArrowLeft, CheckCircle, FileText, Sliders, Layers, Activity } from 'lucide-react'
 import ChavanLogo from '../components/ChavanLogo'
+import GreenEnergyBackground from '../components/GreenEnergyBackground'
 
 interface Props { onBack: () => void }
 
@@ -34,7 +35,11 @@ const FIRE_ITEMS = [
 
 export default function SafetyView({ onBack }: Props) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-crimson-50/60 via-white to-crimson-50/40 py-12 px-6 md:px-12 lg:px-16">
+    <div className="min-h-screen relative py-12 px-6 md:px-12 lg:px-16">
+      {/* Looped, code-drawn solar + windmill scene */}
+      <GreenEnergyBackground />
+      {/* Crimson-tinted overlay so text stays readable and page keeps its brand identity */}
+      <div className="fixed inset-0 bg-crimson-50/40 -z-10" />
       <div className="max-w-6xl mx-auto">
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-8 border-b border-crimson-100 mb-12">

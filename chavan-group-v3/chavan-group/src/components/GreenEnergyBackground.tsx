@@ -5,7 +5,7 @@
  */
 export default function GreenEnergyBackground() {
   return (
-    <div className="fixed inset-0 -z-20 overflow-hidden bg-gradient-to-b from-sky-50 via-white to-emerald-50">
+    <div className="fixed inset-0 -z-20 overflow-hidden bg-gradient-to-b from-sky-100 via-sky-50 to-emerald-100">
       <svg
         className="absolute inset-0 w-full h-full"
         viewBox="0 0 1600 900"
@@ -14,16 +14,16 @@ export default function GreenEnergyBackground() {
       >
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#eef6ff" />
-            <stop offset="100%" stopColor="#ffffff" />
+            <stop offset="0%" stopColor="#cfe8ff" />
+            <stop offset="100%" stopColor="#eef6ff" />
           </linearGradient>
           <linearGradient id="hillBack" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#dcefd8" />
-            <stop offset="100%" stopColor="#c3e6bd" />
+            <stop offset="0%" stopColor="#a9dba0" />
+            <stop offset="100%" stopColor="#8ccb82" />
           </linearGradient>
           <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#bfe6b6" />
-            <stop offset="100%" stopColor="#9fd694" />
+            <stop offset="0%" stopColor="#7fca74" />
+            <stop offset="100%" stopColor="#5fb454" />
           </linearGradient>
           <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#1e3a5f" />

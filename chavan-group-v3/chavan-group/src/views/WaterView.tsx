@@ -24,7 +24,7 @@ export default function WaterView({ onBack }: Props) {
       {/* Looped, code-drawn green energy scene — solar array + wind turbines */}
       <GreenEnergyBackground />
       {/* Light overlay so text stays readable against the bright background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-white/85 via-white/78 to-white/85 -z-10" />
+      <div className="fixed inset-0 bg-white/35 -z-10" />
 
       <div className="py-12 px-6 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto">
