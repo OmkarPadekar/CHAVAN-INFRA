@@ -1,5 +1,6 @@
 import { ArrowLeft, CheckCircle, FileText, Sliders, Layers, Activity } from 'lucide-react'
 import ChavanLogo from '../components/ChavanLogo'
+import GreenEnergyBackground from '../components/GreenEnergyBackground'
 
 interface Props { onBack: () => void }
 
@@ -20,13 +21,10 @@ const PROCESSES = [
 export default function WaterView({ onBack }: Props) {
   return (
     <div className="min-h-screen relative">
-      {/* Looped GIF background — green energy theme */}
-      <div
-        className="fixed inset-0 -z-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/media/greens-bg.gif')" }}
-      />
+      {/* Looped, code-drawn green energy scene — solar array + wind turbines */}
+      <GreenEnergyBackground />
       {/* Light overlay so text stays readable against the bright background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-white/94 via-white/90 to-white/94 -z-10" />
+      <div className="fixed inset-0 bg-gradient-to-br from-white/85 via-white/78 to-white/85 -z-10" />
 
       <div className="py-12 px-6 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto">
